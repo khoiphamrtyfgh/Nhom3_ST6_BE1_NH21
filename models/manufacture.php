@@ -7,7 +7,7 @@ class Manufacture extends Db{
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array   
     }
-    public function getManuById($manuid){
+    public function getManufactureById($manuid){
         $sql = self::$connection->prepare("SELECT * FROM manufactures WHERE manuid = ?");
         
         $sql->bind_param("i",$manuid);
