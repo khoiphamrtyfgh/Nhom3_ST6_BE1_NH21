@@ -85,9 +85,12 @@ $getAllProductsLaptop = $product->getProductType_id(2);
 							<div class="header-search">
 								<form method = "get" action="result.php">
 									<select class="input-select" name="searchCol">
-										<option value="0">Name</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
+										<option value="0">All</option>
+										<option value="1">Phone</option>
+										<option value="2">Laptop</option>
+										<option value="3">Tablet</option>
+										<option value="4">Accessory</option>
+										<option value="5">Smart watch</option>
 									</select>
 									<input name="keyword" class="input" placeholder="Search here">
 									<button type="submit" class="search-btn">Search</button>

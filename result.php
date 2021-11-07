@@ -239,16 +239,19 @@
 						<div class="row">
 							<?php
 							if(isset($_GET['keyword'])):
-								$keyword = $_GET['keyword'];
-								$search = $product->search($keyword);
-								foreach($search as $value):
+								if(isset($_GET['searchCol'])):
+									$keyword = $_GET['keyword'];
+									$searchCol = $_GET['searchCol'];
+									$search = $product->search($keyword);
+									foreach($search as $value):
+										if($searchCol == $value['type_id'] || $searchCol == 0):
 							
 							?>
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/<?php echo $value['image'] ?>" alt="">
+										<img src="./img/<?php echo $value['image'] ?>" alt="" width="250" height="250">
 										<div class="product-label">
 											<span class="sale">-30%</span>
 											<span class="new">NEW</span>
@@ -277,8 +280,10 @@
 								</div>
 							</div>
 							<!-- /product -->
-							<?php
-								endforeach;
+							<?php													
+										endif;
+									endforeach;
+								endif;
 							endif;
 							?>
 
