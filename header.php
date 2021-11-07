@@ -185,11 +185,11 @@ $getAllProductsLaptop = $product->getProductType_id(2);
 					<ul class="main-nav nav navbar-nav">
 						<li class="active"><a href="#">Home</a></li>
 						<li><a href="#">Hot Deals</a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Laptops</a></li>
-						<li><a href="#">Smartphones</a></li>
-						<li><a href="#">Cameras</a></li>
-						<li><a href="#">Accessories</a></li>
+						<li><a href="#">Phone</a></li>
+						<li><a href="#">Laptop</a></li>
+						<li><a href="#">Tablet</a></li>
+						<li><a href="#">Accessory</a></li>
+						<li><a href="#">Smart watch</a></li>
 					</ul>
 					<!-- /NAV -->
 				</div>
