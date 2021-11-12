@@ -185,6 +185,7 @@ $getAllProtype = $protype->getAllProtype();
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
+
 						<li class="active"><a href="index.php">Home</a></li>
 						<?php
 						
@@ -192,6 +193,7 @@ $getAllProtype = $protype->getAllProtype();
 						?>
 						<li><a href="produsts.php?type=<?php echo $value['type_id'] ?>"><?php echo $value['type_name'] ?></a></li>
 						<?php endforeach; ?>
+
 					</ul>
 					<!-- /NAV -->
 				</div>
