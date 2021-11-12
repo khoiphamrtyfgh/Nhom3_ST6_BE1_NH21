@@ -1,5 +1,6 @@
-<?php include "header.php" ?>
-
+<?php 
+include "header.php"
+?>
 		<!-- BREADCRUMB -->
 		<div id="breadcrumb" class="section">
 			<!-- container -->
@@ -238,20 +239,17 @@
 						<!-- store products -->
 						<div class="row">
 							<?php
-							if(isset($_GET['keyword'])):
-								if(isset($_GET['searchCol'])): 
-									$keyword = $_GET['keyword'];
-									$searchCol = $_GET['searchCol'];
-									$search = $product->search($keyword); 
-									foreach($search as $value):
-										if($searchCol == $value['type_id'] || $searchCol == 0):
-							
+							if(isset($_GET['type'])):
+								$type_id = $_GET['type'];
+							    $getProductType = $product->getProductType($type_id);
+								
+								foreach($getProductType as $value):
 							?>
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">
-								<div class="product" >
+								<div class="product">
 									<div class="product-img">
-										<img src="./img/<?php echo $value['image'] ?>" alt="" width="250" height="250">
+										<img src="./img/<?php echo $value['image'] ?>" alt="">
 										<div class="product-label">
 											<span class="sale">-30%</span>
 											<span class="new">NEW</span>
@@ -260,7 +258,7 @@
 									<div class="product-body">
 										<p class="product-category">Category</p>
 										<h3 class="product-name"><a href="#"><?php echo $value['name'] ?></a></h3>
-										<h4 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h4>
+										<h4 class="product-price"><?php echo $value['price'] ?></h4>
 										<div class="product-rating">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
@@ -280,13 +278,7 @@
 								</div>
 							</div>
 							<!-- /product -->
-							<?php													
-										endif;
-									endforeach;
-								endif;
-							endif;
-							?>
-
+							<?php  endforeach; ?>
 						</div>
 						<!-- /store products -->
 
@@ -302,6 +294,8 @@
 							</ul>
 						</div>
 						<!-- /store bottom filter -->
+						<?php   			 
+							endif; ?>
 					</div>
 					<!-- /STORE -->
 				</div>
@@ -310,5 +304,6 @@
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
-
-<?php include "footer.html" ?>
+<?php
+include "footer.html";
+?>

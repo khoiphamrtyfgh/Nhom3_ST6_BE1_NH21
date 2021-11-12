@@ -2,9 +2,11 @@
 require "config.php";
 require "models/db.php";
 require "models/product.php";
+require "models/protype.php";
+$protype = new Protype;
 $product = new Product;
 $getAllProducts = $product->getAllProducts();
-$getAllProductsLaptop = $product->getProductType_id(2);
+$getAllProtype = $protype->getAllProtype();
 //var_dump($getAllProductsLaptop);
 //var_dump($getAllProducts);
 ?>
@@ -73,7 +75,7 @@ $getAllProductsLaptop = $product->getProductType_id(2);
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
+								<a href="index.php" class="logo">
 									<img src="./img/logo.png" alt="">
 								</a>
 							</div>
@@ -90,7 +92,7 @@ $getAllProductsLaptop = $product->getProductType_id(2);
 										<option value="2">Laptop</option>
 										<option value="3">Tablet</option>
 										<option value="4">Accessory</option>
-										<option value="5">Smart watch</option>
+										<option value="5">Smart watch</option> 
 									</select>
 									<input name="keyword" class="input" placeholder="Search here">
 									<button type="submit" class="search-btn">Search</button>
@@ -183,13 +185,13 @@ $getAllProductsLaptop = $product->getProductType_id(2);
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Hot Deals</a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Laptops</a></li>
-						<li><a href="#">Smartphones</a></li>
-						<li><a href="#">Cameras</a></li>
-						<li><a href="#">Accessories</a></li>
+						<li class="active"><a href="index.php">Home</a></li>
+						<?php
+						
+						foreach($getAllProtype as $value):
+						?>
+						<li><a href="produsts.php?type=<?php echo $value['type_id'] ?>"><?php echo $value['type_name'] ?></a></li>
+						<?php endforeach; ?>
 					</ul>
 					<!-- /NAV -->
 				</div>

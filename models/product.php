@@ -16,10 +16,10 @@ class Product extends Db{
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
-    public function getProductType_id($id){
+    public function getProductType($type_id){
         $sql = self::$connection->prepare("SELECT * FROM products WHERE type_id = ?");
      
-        $sql->bind_param("i",$id);
+        $sql->bind_param("i",$type_id);
         $sql->execute();
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
