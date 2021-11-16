@@ -68,7 +68,6 @@ class Product extends Db{
             }else
              $link = $link."<li><a href='$url&page=$j'> $j </a></li>";
      	}
-     	return $link;
-}
-
+         return $link;  
+    }
 }
