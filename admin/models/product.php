@@ -10,6 +10,7 @@ class Product extends Db{
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array   
     }
+
     public function get10AllProducts( $page, $perPage)
     {
         // Tính số thứ tự trang bắt đầu
@@ -37,4 +38,5 @@ class Product extends Db{
      	}
          return $link;  
     }
+
 }

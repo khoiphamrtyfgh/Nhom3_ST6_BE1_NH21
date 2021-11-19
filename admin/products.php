@@ -1,5 +1,6 @@
-<?php include "haeder.php" ?>
-
+<?php
+include "haeder.php"
+?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -70,6 +71,7 @@
                   </tr>
               </thead>
               <tbody>
+
                   <?php 
                   $getAllProducts = $product->getAllProducts();
 
@@ -128,9 +130,7 @@
                   </tr>
                   
                   <?php endforeach; ?>
-                  
               </tbody>
-              
           </table>
         </div>
         <!-- /.card-body -->
@@ -141,4 +141,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <?php include "footer.html" ?>
+ <?php
+ include "footer.php";
+ ?>
+

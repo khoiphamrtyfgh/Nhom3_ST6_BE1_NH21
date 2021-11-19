@@ -3,10 +3,7 @@ require "config.php";
 require "models/db.php";
 require "models/product.php";
 $product = new Product;
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
