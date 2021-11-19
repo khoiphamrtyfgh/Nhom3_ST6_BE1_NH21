@@ -243,7 +243,6 @@
 									$keyword = $_GET['keyword'];
 									$searchCol = $_GET['searchCol'];
 									$search = $product->search($keyword,$searchCol); 
-									
 									$perPage = 3; 										
 									$page = isset($_GET['page'])?$_GET['page']:1;	
 									$total = count($search); 					

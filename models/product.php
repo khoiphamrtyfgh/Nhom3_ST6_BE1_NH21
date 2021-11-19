@@ -26,13 +26,13 @@ class Product extends Db{
         return $items; //return an array
     }
     public function search($keyword ,$searchCol){
-        $sql = self::$connection->prepare("SELECT * FROM products WHERE `name` LIKE ? AND `type_id` = ? OR ? = 0");
+        $sql = self::$connection->prepare("SELECT * FROM products WHERE( `name` LIKE ? )AND (`type_id` = ? OR ? = 0)");
         $keyword = "%$keyword%";
-        $sql->bind_param("iii", $keyword,$searchCol,$searchCol);
-        $sql->execute(); //return an object
+        $sql->bind_param("sii", $keyword,$searchCol,$searchCol);
+        $sql->execute();
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
-        return $items; //return an array
+        return $items; //return an array   
     }
     public function get3ProductsByType($type_id, $page, $perPage)
     {
@@ -49,9 +49,9 @@ class Product extends Db{
     {
         // Tính số thứ tự trang bắt đầu
         $firstLink = ($page - 1) * $perPage;
-        $sql = self::$connection->prepare("SELECT * FROM products WHERE `name` LIKE ? AND `type_id` = ? OR ? = 0 LIMIT ?, ?");
+        $sql = self::$connection->prepare("SELECT * FROM `products` WHERE ( `name` LIKE ? ) AND (`type_id` = ? OR ? = 0 )LIMIT ?, ?");
         $keyword = "%$keyword%";
-        $sql->bind_param("iiiii",$keyword ,$searchCol,$searchCol, $firstLink, $perPage);
+        $sql->bind_param("siiii",$keyword ,$searchCol,$searchCol, $firstLink, $perPage);
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
