@@ -40,10 +40,10 @@
           <table class="table table-striped projects">
               <thead>
                   <tr>
-                      <th style="width: 1%">
+                      <th style="width: 2%">
                             Id
                       </th>
-                      <th style="width: 10%" class="text-center">
+                      <th style="width: 5%" >
                             Name
                       </th>
                       <th style="width: 5%" >
