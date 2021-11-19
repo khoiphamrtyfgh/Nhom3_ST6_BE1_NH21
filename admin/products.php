@@ -102,7 +102,9 @@
                           <img style="width:50px" src="../img/<?php echo $value['image'] ?>" alt="" srcset="">
                       </td>
                       <td>
-                      <?php echo $value['description'] ?>
+                      
+                      <?php echo substr($value['description'],0,50);?>
+                      <a href='#' name="sanpham">...</a></p>
                       </td>
                       <td class="project_progress">
                       <?php 
