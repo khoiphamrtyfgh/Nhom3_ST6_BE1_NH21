@@ -247,7 +247,7 @@ $getAllProtype = $protype->getAllProtype();
             </a>
           </li>
           <li class="nav-item">
-            <a href="manufactures.php" class="nav-link">
+            <a href="protypes.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Protypes
