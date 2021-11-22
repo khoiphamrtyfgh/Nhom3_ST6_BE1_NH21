@@ -9,12 +9,13 @@ $protype = new Protype;
 $product = new Product;
 $getAllProducts = $product->getAllProducts();
 $getAllProtype = $protype->getAllProtype();
-//var_dump($getAllProductsLaptop);
-//var_dump($getAllProducts);
 
 $username = $_POST['username'] ?? '';
-$password = $_POST['password'] ?? '';
-if ($username != NULL && $password != NULL) {
+$phone = $_POST['phone'] ??'';
+$address = $_POST['address']??'';
+$email = $_POST['email']??'';
+
+if ($username != NULL &&$phone != NULL &&  $address != NULL && $email != NULL) {
     $_SESSION['user'] = $username;
     header("location:index.php");
 } else {
@@ -52,7 +53,7 @@ if ($username != NULL && $password != NULL) {
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
 		<!-- css login  -->
-		<link rel="stylesheet" href="css/dangnhap.css" />
+		<link rel="stylesheet" href="css/dangki.css" />
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -75,7 +76,7 @@ if ($username != NULL && $password != NULL) {
 					<ul class="header-links pull-right">
 						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
 						<li><a href="login.php"><i class="fa fa-user-o"></i> My Account</a></li>
-						<li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+						<li><a href="logout.php">Log out</a></li>
 						<li><a href="register.php"><i class="fas fa-registered"></i>Register</a></li>
 					</ul>
 				</div>
@@ -218,12 +219,14 @@ if ($username != NULL && $password != NULL) {
         <!-- /container -->
 		</nav>
 		<!-- /NAVIGATION -->
-    <form action='login.php' class="dangnhap" method='POST'>
-        Tên đăng nhập <input type='text' name='username' >
-        Mật khẩu <input type='password' name='password' >
-        <input type='submit' class="button" name="dangnhap" value='Đăng nhập' >
+    <form action='register.php' class="dangki" method='POST'>
+         Tên <input type='text' name='username' >
+         Số điện thoại <input type='text' name='phone' >
+         Địa chỉ <input type='text' name='address' >
+         Email<input type='text' name='email' >
+        <input type='submit' class="button" name="dangki" value='Đăng kí' >
  
-</form>
+    </form>
 </body>
 </html>
 <?php

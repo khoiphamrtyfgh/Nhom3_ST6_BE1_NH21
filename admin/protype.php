@@ -42,10 +42,10 @@ include "header.php";
               <thead>
               <tr>
                       <th style="width: 1%">
-                          Manu_id
+                          Type_id
                       </th>
                       <th style="width: 20%">
-                           Manu_name
+                           Type_name
                       </th>
                       <th style="width: 5% " class="text-center">
                          Action
@@ -54,12 +54,13 @@ include "header.php";
               </thead>
               <tbody>
               <?php
-              $getAllManufacture = $manufacture->getAllManufacture();
-                foreach($getAllManufacture as $value):
+             
+              $getAllProtype = $protype->getAllProtype(); 
+                foreach($getAllProtype as $value):
                 ?>
                  <tr>
-                      <td><?php echo $value['manu_id'] ?> </td>
-                      <td><?php echo $value['manu_name'] ?> </td>
+                      <td><?php echo $value['type_id'] ?> </td>
+                      <td><?php echo $value['type_name'] ?> </td>
                       <td class="project-actions text-right">
                         
                           <a class="btn btn-info btn-sm" href="#">

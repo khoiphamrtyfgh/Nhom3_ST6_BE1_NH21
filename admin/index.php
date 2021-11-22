@@ -608,4 +608,4 @@ include "header.php";
   </div>
   <!-- /.content-wrapper -->
 
-<?php include "footer.html" ?>
+<?php include "footer.php" ?>

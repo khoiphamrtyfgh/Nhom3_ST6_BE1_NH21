@@ -2,7 +2,15 @@
 require "config.php";
 require "models/db.php";
 require "models/product.php";
+require "models/manufacture.php";
+require "models/protype.php";
 $product = new Product;
+$manufacture = new Manufacture;
+$protype = new Protype;
+
+$getAllProducts = $product->getAllProducts();
+$getAllManufacture = $manufacture->getAllManufacture();
+$getAllProtype = $protype->getAllProtype();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -228,7 +236,7 @@ $product = new Product;
             </a>
           </li>
           <li class="nav-item">
-            <a href="products.php" class="nav-link">
+            <a href="manufactures.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Manufacture
@@ -236,7 +244,7 @@ $product = new Product;
             </a>
           </li>
           <li class="nav-item">
-            <a href="products.php" class="nav-link">
+            <a href="protype.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Protype
