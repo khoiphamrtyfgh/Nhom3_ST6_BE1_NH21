@@ -252,7 +252,7 @@ $getAllProtype = $protype->getAllProtype();
             </a>
           </li>
           <li class="nav-item">
-            <a href="index.php" class="nav-link">
+            <a href="addproduct.php" class="nav-link">
               <i class="nav-icon fas fas fa-th"></i>
               <p>
                 Product Add

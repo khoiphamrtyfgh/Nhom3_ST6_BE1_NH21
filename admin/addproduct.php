@@ -20,7 +20,7 @@
 
     <!-- Main content -->
     <section class="content">
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="add.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-12">
           <div class="card card-primary">
@@ -29,52 +29,60 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputName">Id</label>
-                <input type="text" id="inputName" class="form-control">
-              </div>
-              <div class="form-group">
                 <label for="inputClientCompany">Name</label>
-                <input type="text" id="inputClientCompany" class="form-control">
+                <input type="text" id="inputClientCompany" class="form-control" name='name'>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Manu name</label>
-                <select id="inputStatus" class="form-control custom-select">
-                  <option selected disabled>Manu name</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option>Success</option>
+                <select id="inputStatus" class="form-control custom-select" name='manu_id'>
+                  <option selected disabled>Select one</option>
+                  <?php
+                    foreach($getAllManufacture as $value):
+                  ?>
+                  <option value="<?php echo $value['manu_id'] ?>"><?php echo $value['manu_name'] ?></option>
+                    <?php 
+                    endforeach;  
+                    ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Type name</label>
-                <select id="inputStatus" class="form-control custom-select">
-                  <option selected disabled>Type name</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option>Success</option>
+                <select id="inputStatus" class="form-control custom-select" name='type_id'>
+                  <option selected disabled>Select one</option>
+                  <?php
+                    foreach($getAllProtype as $value):
+                  ?>
+                  <option value="<?php echo $value['type_id'] ?>"><?php echo $value['type_name'] ?></option>
+
+                  <?php
+                    endforeach; 
+                  ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputProjectLeader">Price</label>
-                <input type="text" id="inputProjectLeader" class="form-control">
+                <input type="text" id="inputProjectLeader" class="form-control" name='price'>
+              </div>
+              <div class="form-group">
+                <label for="inputProjectLeader">Image</label>
+                <input type="file" name="image" id="image" class='form-control'>
               </div>
               <div class="form-group">
                 <label for="inputDescription">Description</label>
-                <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-              <div class="form-group">
-                <label for="inputProjectLeader">Price</label>
-                <input type="text" id="inputProjectLeader" class="form-control">
-                <input type="file" name="fileToUpload" id="fileToUpload">
-              </div>
+                <textarea id="inputDescription" class="form-control" name='description' rows="4"></textarea>
+              
               
               <div class="form-group">
                 <label for="inputStatus">Feature</label>
-                <select id="inputStatus" class="form-control custom-select">
+                <select id="inputStatus" class="form-control custom-select" name='feature'>
                   <option selected disabled>Feature</option>
-                  <option>0</option>
-                  <option>1</option>
-
-                </select>
+                  <option value = "0" >0</option>
+                  <option value = "1" >1</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label for="inputStatus">Time</label>
+                <input type="datetime-local" name="time" class='form-control'>
               </div>
               
             </div>
@@ -86,7 +94,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <input type="submit" value="Submit" class="btn btn-success float-right">
+          <input type="submit" value="Submit" name = "submit" class="btn btn-success float-right">
         </div>
       </div>
       </form>

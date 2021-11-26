@@ -65,6 +65,9 @@ include "header.php"
                       <th style="width: 8%" class="text-center">
                             Feature
                       </th>
+                      <th style="width: 8%" class="text-center">
+                            Created at
+                      </th>
                       <th style="width: 20%" class="text-center">
                       Status
                       </th>
@@ -73,16 +76,8 @@ include "header.php"
               <tbody>
 
                   <?php 
-                  $getAllProducts = $product->getAllProducts();
-
-                  //$perPage = 10; 										
-                  //$page = isset($_GET['page'])?$_GET['page']:1;	
-                  //$total = count($getAllProducts); 					
-                  //$url = $_SERVER['PHP_SELF'];		
-
-                  //$get10AllProducts = $product->get10AllProducts($page, $perPage);
-
-                  foreach($getAllProducts as $value):
+                  $getAllProductsDesc = $product->getAllProductsDesc();
+                  foreach($getAllProductsDesc as $value):
                   ?>
                   <tr>
                       <td>
@@ -105,8 +100,13 @@ include "header.php"
                       </td>
                       <td>
                       
-                      <?php echo substr($value['description'],0,50);?>
-                      <a href='#' name="sanpham">...</a></p>
+                      <?php 
+                      if(strlen($value['description']) > 70){
+                        echo substr($value['description'],0,50)."...";
+                      }else
+                      echo substr($value['description'],0,50);
+                      ?>
+                      
                       </td>
                       <td class="project_progress">
                       <?php 
@@ -115,13 +115,16 @@ include "header.php"
                       } 
                       ?>
                       </td>
+                      <td class="project_state">
+                      <?php echo $value['created_at'] ?> 
+                      </td>
                       <td class="project-actions text-right">
                           <a class="btn btn-info btn-sm" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a class="btn btn-danger btn-sm" href="del.php?id=<?php echo $value['id'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete
