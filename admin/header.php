@@ -219,9 +219,22 @@ $getAllProtype = $protype->getAllProtype();
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <?php
-          $page = isset($_GET['page'])?$_GET['page']:1;
+          <?php 
           $url = 	$_SERVER['PHP_SELF'];
+          if(strpos($url,"/products.php") != null ){
+            $page = 2;
+          }else if(strpos($url,"/manufactures.php") != null ){
+            $page = 3;
+          }else if(strpos($url,"/protype.php") != null ){
+            $page = 4;
+          }else if(strpos($url,"/addproduct.php") != null ){
+            $page = 5;
+          }else if(strpos($url,"/addmanufacture.php") != null ){
+            $page = 6;
+          }else if(strpos($url,"/addprotype.php") != null ){
+            $page = 7;
+          }else $page = 1;
+          
           $tamPage = 1;
           ?>
           <li class="nav-item">
@@ -231,7 +244,7 @@ $getAllProtype = $protype->getAllProtype();
               echo '<a class="nav-link active">';
               $tamPage = $tamPage + 1;
             }else{
-              echo '<a href="index.php?page='.$tamPage.'" class="nav-link">';
+              echo '<a href="index.php" class="nav-link">';
               $tamPage = $tamPage + 1;
             }
             ?>
@@ -248,7 +261,7 @@ $getAllProtype = $protype->getAllProtype();
               echo '<a class="nav-link active">';
               $tamPage = $tamPage + 1;
             }else{
-              echo '<a href="products.php?page='.$tamPage.'" class="nav-link">';
+              echo '<a href="products.php" class="nav-link">';
               $tamPage = $tamPage + 1;
             }
             ?>
@@ -265,7 +278,7 @@ $getAllProtype = $protype->getAllProtype();
               echo '<a class="nav-link active">';
               $tamPage = $tamPage + 1;
             }else{
-              echo '<a href="manufactures.php?page='.$tamPage.'" class="nav-link">';
+              echo '<a href="manufactures.php" class="nav-link">';
               $tamPage = $tamPage + 1;
             }
             ?>
@@ -282,7 +295,7 @@ $getAllProtype = $protype->getAllProtype();
               echo '<a class="nav-link active">';
               $tamPage = $tamPage + 1;
             }else{
-              echo '<a href="protype.php?page='.$tamPage.'" class="nav-link">';
+              echo '<a href="protype.php" class="nav-link">';
               $tamPage = $tamPage + 1;
             }
             ?>
@@ -299,7 +312,7 @@ $getAllProtype = $protype->getAllProtype();
               echo '<a class="nav-link active">';
               $tamPage = $tamPage + 1;
             }else{
-              echo '<a href="addproduct.php?page='.$tamPage.'" class="nav-link">';
+              echo '<a href="addproduct.php" class="nav-link">';
               $tamPage = $tamPage + 1;
             }
             ?>
@@ -310,30 +323,13 @@ $getAllProtype = $protype->getAllProtype();
             </a>
           </li>
           <li class="nav-item">
-          <?php
-            //<a href="addprotype.php" class="nav-link">
-            if($page == $tamPage){
-              echo '<a class="nav-link active">';
-              $tamPage = $tamPage + 1;
-            }else{
-              echo '<a href="addprotype.php?page='.$tamPage.'" class="nav-link">';
-              $tamPage = $tamPage + 1;
-            }
-            ?>
-            <i class="nav-icon far fa-plus-square"></i>
-              <p>
-                Protype Add
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-          <?php
+            <?php
             //<a href="addmanufacture.php" class="nav-link">
             if($page == $tamPage){
               echo '<a class="nav-link active">';
               $tamPage = $tamPage + 1;
             }else{
-              echo '<a href="addmanufacture.php?page='.$tamPage.'" class="nav-link">';
+              echo '<a href="addmanufacture.php" class="nav-link">';
               $tamPage = $tamPage + 1;
             }
             ?>
@@ -343,6 +339,24 @@ $getAllProtype = $protype->getAllProtype();
               </p>
             </a>
           </li>
+          <li class="nav-item">
+          <?php
+            //<a href="addprotype.php" class="nav-link">
+            if($page == $tamPage){
+              echo '<a class="nav-link active">';
+              $tamPage = $tamPage + 1;
+            }else{
+              echo '<a href="addprotype.php" class="nav-link">';
+              $tamPage = $tamPage + 1;
+            }
+            ?>
+            <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                Protype Add
+              </p>
+            </a>
+          </li>
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
