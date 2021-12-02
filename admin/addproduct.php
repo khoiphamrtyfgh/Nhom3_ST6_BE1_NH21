@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
               <li class="breadcrumb-item active">Product Add</li>
             </ol>
           </div>
@@ -20,7 +20,7 @@
 
     <!-- Main content -->
     <section class="content">
-    <form action="addproductpphp.php" method="post" enctype="multipart/form-data">
+    <form action="addduct.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-12">
           <div class="card card-primary">

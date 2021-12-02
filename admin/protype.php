@@ -12,7 +12,7 @@ include "header.php";
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
               <li class="breadcrumb-item active">Projects</li>
             </ol>
           </div>
@@ -68,7 +68,7 @@ include "header.php";
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a class="btn btn-danger btn-sm" href="delProtype.php?type_id=<?php echo $value['type_id'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete
