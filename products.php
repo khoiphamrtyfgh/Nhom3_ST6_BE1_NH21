@@ -242,7 +242,7 @@ include "header.php"
 							if(isset($_GET['type'])):
 								$type_id = $_GET['type'];
 							    $getProductType = $product->getProductType($type_id);
-
+								
 								$perPage = 3; 										
 								$page = isset($_GET['page'])?$_GET['page']:1;	
 								$total = count($getProductType); 					

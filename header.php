@@ -196,7 +196,7 @@ $getAllProtype = $protype->getAllProtype();
 						
 						foreach($getAllProtype as $value):
 						?>
-						<li><a href="produsts.php?type=<?php echo $value['type_id'] ?>"><?php echo $value['type_name'] ?></a></li>
+						<li><a href="products.php?type=<?php echo $value['type_id'] ?>"><?php echo $value['type_name'] ?></a></li>
 						<?php endforeach; ?>
 
 					</ul>
