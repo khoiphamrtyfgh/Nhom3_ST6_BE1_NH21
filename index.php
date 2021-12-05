@@ -1,5 +1,4 @@
 <?php
-// 
 include "header.php";
 ?>
 		<!-- SECTION -->
@@ -69,11 +68,11 @@ include "header.php";
 							<h3 class="title">New Products</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab1">Điện </a></li>
-									<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-									<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-									<li><a data-toggle="tab" href="#tab1">Accessories</a></li>
-									<li class="active"><a href="index.php">Home</a></li>
+									<li class="active"><a data-toggle="tab" href="#tab1">Smartphones </a></li>
+									<li><a data-toggle="tab" href="#tab1">Laptop</a></li>
+									<li><a data-toggle="tab" href="#tab1">Tablet</a></li>
+									<li><a data-toggle="tab" href="#tab1">Accessory</a></li>
+									<li><a data-toggle="tab" href="#tab1">Smart watch</a></li>
 								</ul>
 							</div>
 						</div>
@@ -188,13 +187,15 @@ include "header.php";
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
-							<h3 class="title">Top selling</h3>
+							<h3 class="title">Top Highlights</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
-									<li><a data-toggle="tab" href="#tab2">Smartphones</a></li>
-									<li><a data-toggle="tab" href="#tab2">Cameras</a></li>
-									<li><a data-toggle="tab" href="#tab2">Accessories</a></li>
+									<li class="active"><a data-toggle="tab" href="#tab2">Smartphones</a></li>
+									
+									<li><a data-toggle="tab" href="#tab2">Laptop</a></li>
+									<li><a data-toggle="tab" href="#tab2">Tablet</a></li>
+									<li><a data-toggle="tab" href="#tab2">Accessory</a></li>
+									<li><a data-toggle="tab" href="#tab2">Smart watch</a></li>
 								</ul>
 							</div>
 						</div>
