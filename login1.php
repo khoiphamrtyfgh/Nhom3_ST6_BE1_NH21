@@ -218,7 +218,7 @@ if ($username != NULL && $password != NULL) {
         <!-- /container -->
 		</nav>
 		<!-- /NAVIGATION -->
-    <form action='login.php' class="dangnhap" method='POST'>
+    <form action='login1.php' class="dangnhap" method='POST'>
         Tên đăng nhập <input type='text' name='username' >
         Mật khẩu <input type='password' name='password' >
         <input type='submit' class="button" name="dangnhap" value='Đăng nhập' >
