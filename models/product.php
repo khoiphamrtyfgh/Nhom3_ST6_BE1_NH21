@@ -70,4 +70,31 @@ class Product extends Db{
      	}
          return $link;  
     }
+    public function getNewProductType($type_id){
+        $sql = self::$connection->prepare("SELECT * FROM `products` WHERE `type_id` = ? ORDER BY `created_at` DESC LIMIT 10");
+     
+        $sql->bind_param("i",$type_id);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+    public function getTopProductType($type_id){
+        $sql = self::$connection->prepare("SELECT * FROM `products` WHERE `type_id` = ? AND `feature` = 1 ORDER BY `created_at` DESC LIMIT 10");
+     
+        $sql->bind_param("i",$type_id);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+    public function getNewProduct4($type_id){
+        $sql = self::$connection->prepare("SELECT * FROM `products` WHERE `type_id` = ? ORDER BY `created_at` DESC LIMIT 4");
+     
+        $sql->bind_param("i",$type_id);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
 }
