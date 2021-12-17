@@ -69,7 +69,7 @@
               </div>
               <div class="form-group">
                 <label for="inputDescription">Description</label>
-                <textarea id="inputDescription" class="form-control" name='description' rows="4"></textarea>
+                <textarea id="summernote" class="form-control" name='description' rows="4"></textarea>
               
               
               <div class="form-group">
