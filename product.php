@@ -22,111 +22,115 @@ include "header.php";
 	<!-- /container -->
 </div>
 <!-- /BREADCRUMB -->
-		<?php
-		if (isset($_GET['id'])) {
-			$getProductById = $product->getProductById($_GET['id']);
-			foreach ($getProductById as $value) {
-				$id = $value['type_id'];
-		?>
-				<!-- SECTION -->
-				<div class="section">
-					<!-- container -->
-					<div class="container">
-						<!-- row -->
+<?php
+if (isset($_GET['id'])) {
+	$getProductById = $product->getProductById($_GET['id']);
+	foreach ($getProductById as $value) {
+		$id = $value['type_id'];
+?>
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
 
-						<div class="row">
-							<!-- Product main img -->
-							<div class="col-md-5 col-md-push-2">
-								<div id="product-main-img">
-									<div class="product-preview">
-										<img src="./img/<?php echo $value['image'] ?>" alt="">
-									</div>
-
-									<div class="product-preview">
-										<img src="./img/<?php echo $value['image'] ?>" alt="">
-									</div>
-
-									<div class="product-preview">
-										<img src="./img/<?php echo $value['image'] ?>" alt="">
-
-									</div>
-								</div>
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+				<div class="row">
+					<!-- Product main img -->
+					<div class="col-md-5 col-md-push-2">
+						<div id="product-main-img">
+							<div class="product-preview">
+								<img src="./img/<?php echo $value['image'] ?>" alt="">
 							</div>
 
-							<!-- Product thumb imgs -->
-							<div class="col-md-2  col-md-pull-5">
-								<div id="product-imgs">
-									<div class="product-preview">
-										<img src="./img/<?php echo $value['image'] ?>" alt="">
-									</div>
-
-									<div class="product-preview">
-										<img src="./img/<?php echo $value['image'] ?>" alt="">
-									</div>
-
-									<div class="product-preview">
-										<img src="./img/<?php echo $value['image'] ?>" alt="">
-									</div>
-								</div>
+							<div class="product-preview">
+								<img src="./img/<?php echo $value['image'] ?>" alt="">
 							</div>
-							<!-- /Product thumb imgs -->
-							<!-- Product details -->
-							<div class="col-md-5">
-								<div class="product-details">
-									<h2 class="product-name"><?php echo $value['name'] ?></h2>
 
-									<div class="product-rating">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o"></i>
+							<div class="product-preview">
+								<img src="./img/<?php echo $value['image'] ?>" alt="">
+
+							</div>
+						</div>
+						<!-- <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button> -->
+					</div>
+
+					<!-- Product thumb imgs -->
+					<div class="col-md-2  col-md-pull-5">
+						<div id="product-imgs">
+							<div class="product-preview">
+								<img src="./img/<?php echo $value['image'] ?>" alt="">
+							</div>
+
+							<div class="product-preview">
+								<img src="./img/<?php echo $value['image'] ?>" alt="">
+							</div>
+
+							<div class="product-preview">
+								<img src="./img/<?php echo $value['image'] ?>" alt="">
+							</div>
+						</div>
+					</div>
+					<!-- /Product thumb imgs -->
+					<!-- Product details -->
+					<div class="col-md-5">
+						<div class="product-details">
+							<h2 class="product-name"><?php echo $value['name'] ?></h2>
+
+							<div class="product-rating">
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+							</div>
+
+
+							<div>
+								<h3 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h3>
+
+							</div>
+							<P><?php echo $value['description'] ?></P>
+
+							<div class="add-to-cart">
+								<div class="qty-label">
+									Qty
+									<div class="input-number">
+										<input class="qty" type="number" value="1">
+										<span class="qty-up">+</span>
+										<span class="qty-down">-</span>
 									</div>
-
-
-									<div>
-										<h3 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h3>
-
-									</div>
-									<P><?php echo $value['description'] ?></P>
-
-									<div class="add-to-cart">
-										<div class="qty-label">
-											Qty
-											<div class="input-number">
-												<input class="qty" type="number" value="1">
-												<span class="qty-up">+</span>
-												<span class="qty-down">-</span>
-											</div>
-										</div>
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-									</div>
-
-
-									<ul class="product-btns">
-										<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
-									</ul>
-
-									<ul class="product-links">
-										<li>Category:</li>
-										<li><a href="#">Headphones</a></li>
-										<li><a href="#">Accessories</a></li>
-									</ul>
-
-									<ul class="product-links">
-										<li>Share:</li>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-envelope"></i></a></li>
-									</ul>
-
-
 								</div>
-								</div>
-													<!-- Product tab -->
+								<button  href="addcart.php?id=<?php echo $value['id']; ?>" class="add-to-cart-btn">
+									<i class="fa fa-shopping-cart">
+									
+									</i> add to cart
+								</button>
+							</div>
+
+
+							<ul class="product-btns">
+								<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
+								<li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
+							</ul>
+
+							<ul class="product-links">
+								<li>Category:</li>
+								<li><a href="#">Headphones</a></li>
+								<li><a href="#">Accessories</a></li>
+							</ul>
+
+							<ul class="product-links">
+								<li>Share:</li>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i></a></li>
+							</ul>
+
+
+						</div>
+					</div>
+					<!-- Product tab -->
 					<div class="col-md-12">
 						<div id="product-tab">
 							<!-- product tab nav -->
@@ -349,57 +353,57 @@ include "header.php";
 		</div>
 		<!-- /SECTION -->
 
-<!-- Section -->
-<div class="section">
-	<!-- container -->
-	<div class="container">
-		<!-- row -->
-		<div class="row">
+		<!-- Section -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
 
-			<div class="col-md-12">
-				<div class="section-title text-center">
-					<h3 class="title">Related Products</h3>
-				</div>
-			</div>
-			<?php
-				$getNewProduct4 = $product->getNewProduct4($id);
-				foreach ($getNewProduct4 as $value2) :
-			?>
-				<!-- product -->
-				<div class="col-md-3 col-xs-6">
-					<div class="product">
-						<div class="product-img">
-							<img src="./img/<?php echo $value2['image'] ?>" alt="">
-
-						</div>
-						<div class="product-body">
-							<p class="product-category">Category</p>
-							<h3 class="product-name"><a href="product.php?id=<?php echo $value2['id']; ?>"><?php echo $value2['name']; ?></a></h3>
-							<h4 class="product-price"><?php echo number_format($value2['price']) ?> VNĐ</del></h4>
-							<div class="product-rating">
-							</div>
-							<div class="product-btns">
-								<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-								<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-								<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-							</div>
-						</div>
-						<div class="add-to-cart">
-							<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+					<div class="col-md-12">
+						<div class="section-title text-center">
+							<h3 class="title">Related Products</h3>
 						</div>
 					</div>
-				</div>
-				<!-- /product -->
+					<?php
+					$getNewProduct4 = $product->getNewProduct4($id);
+					foreach ($getNewProduct4 as $value2) :
+					?>
+						<!-- product -->
+						<div class="col-md-3 col-xs-6">
+							<div class="product">
+								<div class="product-img">
+									<img src="./img/<?php echo $value2['image'] ?>" alt="">
 
-			<?php endforeach; ?>
-			
+								</div>
+								<div class="product-body">
+									<p class="product-category">Category</p>
+									<h3 class="product-name"><a href="product.php?id=<?php echo $value2['id']; ?>"><?php echo $value2['name']; ?></a></h3>
+									<h4 class="product-price"><?php echo number_format($value2['price']) ?> VNĐ</del></h4>
+									<div class="product-rating">
+									</div>
+									<div class="product-btns">
+										<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+										<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+										<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<!-- <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button> -->
+								</div>
+							</div>
+						</div>
+						<!-- /product -->
+
+					<?php endforeach; ?>
+
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
 
 <?php
-			}
-		}
+	}
+}
 ?>
 <!-- /Section -->
 <?php
