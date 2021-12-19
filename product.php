@@ -90,24 +90,23 @@ if (isset($_GET['id'])) {
 
 							</div>
 							<P><?php echo $value['description'] ?></P>
-
-							<div class="add-to-cart">
-								<div class="qty-label">
-									Qty
-									<div class="input-number">
-										<input class="qty" type="number" value="1">
-										<span class="qty-up">+</span>
-										<span class="qty-down">-</span>
+							<form action="addcart.php?id=<?php echo $value['id'] ?>">
+								<div class="add-to-cart">
+									<div class="qty-label">
+										Qty
+										<div class="input-number">
+											<input class="qty" type="number" value="1">
+											<span class="qty-up">+</span>
+											<span class="qty-down">-</span>
+										</div>
 									</div>
+									<button class="add-to-cart-btn">
+										<i class="fa fa-shopping-cart">
+
+										</i> add to cart
+									</button>
 								</div>
-								<button  href="addcart.php?id=<?php echo $value['id']; ?>" class="add-to-cart-btn">
-									<i class="fa fa-shopping-cart">
-									
-									</i> add to cart
-								</button>
-							</div>
-
-
+							</form>
 							<ul class="product-btns">
 								<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
 								<li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
