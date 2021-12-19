@@ -14,13 +14,14 @@ class User extends Db{
         $sql->bind_param("ss",$username,$password);
         $sql->execute();
         $items=array();
-        $items=$sql->get_result()->num_rows;
-        if($items==1){
-            return true;
-        }
-        else{
-            return false;
-        }
+        // $items=$sql->get_result()->num_rows;
+        // if($items==1){
+        //     return true;
+        // }
+        // else{
+        //     return false;
+        // }
+        return $items; 
     }
     public function addUser($username, $password,$fullname,$address,$email,$phone)
     {
