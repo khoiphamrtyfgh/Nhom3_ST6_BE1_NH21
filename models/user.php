@@ -14,7 +14,7 @@ class User extends Db{
         $sql->bind_param("ss",$username,$password);
         $sql->execute();
         $items=array();
-        // $items=$sql->get_result()->num_rows;
+        $items=$sql->get_result()->num_rows;
         // if($items==1){
         //     return true;
         // }

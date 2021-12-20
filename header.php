@@ -1,14 +1,21 @@
 <?php
+session_start();
 require "config.php";
 require "models/db.php";
 require "models/product.php";
 require "models/protype.php";
+
+require "models/user.php";
 $protype = new Protype;
 $product = new Product;
+
+$user = new User;
 $getAllProducts = $product->getAllProducts();
 $getAllProtype = $protype->getAllProtype();
 //var_dump($getAllProductsLaptop);
 //var_dump($getAllProducts);
+
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
