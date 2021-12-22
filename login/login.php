@@ -10,18 +10,15 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
     if ($user->checkLogin($username, $password)) {
         $acc = $user->checkLogin($username, $password);
-            var_dump($value['role_id']);
-            if ($acc['role_id'] == 0){
+        foreach($acc as $value){
+            if ($value['role_id'] == 0){
                 $_SESSION['user'] = $username;
-                echo '<script language="javascript">alert("Đăng Nhập admin Thành Công!"); window.location="../admin";</script>';
-                
-                //header('location:../admin');
+                echo '<script language="javascript">alert("Đăng Nhập admin Thành Công!"); window.location="../admin";</script>'; 
             } else {
                 $_SESSION['user'] = $username;
                 echo '<script language="javascript">alert("Đăng Nhập Thành Công!"); window.location="../index.php";</script>';
-               
-               
             }
+        }
     } else {
         echo '<script language="javascript">alert("Đăng Nhập thất bại!"); window.location="index.php";</script>';
     }

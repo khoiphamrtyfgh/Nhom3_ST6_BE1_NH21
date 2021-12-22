@@ -75,7 +75,7 @@
 						<div class="invalid-feedback">Số điện thoại phải từ 10-11 số</div>
 					</div>
 					<div class="form-group">
-						<input name="submit" type="submit" value="Resignter" class="btn float-right login_btn">
+						<input name="submit" type="submit" value="Register" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
