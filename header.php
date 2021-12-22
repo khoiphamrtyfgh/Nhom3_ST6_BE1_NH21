@@ -133,7 +133,7 @@ $getAllProtype = $protype->getAllProtype();
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" href="yourcart.php">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Your Cart</span>
-										<div class="qty">3</div>
+										
 									</a>
 						
 								</div>
