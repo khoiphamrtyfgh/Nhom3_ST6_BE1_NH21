@@ -26,7 +26,7 @@ include "header.php";
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Projects</h3>
+          <h3 class="card-title">Manufactures</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -62,7 +62,7 @@ include "header.php";
                       <td><?php echo $value['manu_name'] ?> </td>
                       <td class="project-actions text-right">
                         
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm" href="editmanufactures.php?manu_id=<?php echo $value['manu_id'] ?>">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
