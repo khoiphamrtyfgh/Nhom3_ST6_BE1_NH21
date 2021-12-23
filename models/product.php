@@ -97,4 +97,14 @@ class Product extends Db{
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
+    public function getAllProductByCart($id_user){
+        $sql = self::$connection->prepare("SELECT * FROM products , cart WHERE id_user = ? AND id_product = id");            
+        
+        $sql->bind_param("i",$id_user);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array   
+    }
+    
 }

@@ -90,7 +90,7 @@ if (isset($_GET['id'])) {
 
 							</div>
 							<P><?php echo $value['description'] ?></P>
-							<form action="addcart.php?id=<?php echo $value['id'] ?>">
+							
 								<div class="add-to-cart">
 									<div class="qty-label">
 										Qty
@@ -103,10 +103,11 @@ if (isset($_GET['id'])) {
 									<button class="add-to-cart-btn">
 										<i class="fa fa-shopping-cart">
 
-										</i> add to cart
+										</i> 
+										<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
 									</button>
 								</div>
-							</form>
+							
 							<ul class="product-btns">
 								<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
 								<li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>

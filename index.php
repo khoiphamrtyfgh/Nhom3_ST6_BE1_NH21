@@ -66,15 +66,12 @@ include "header.php";
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
-							<h3 class="title">New Products</h3>
+							<h3 class="title">New Products Smartphones</h3>
 							<div class="section-nav">
 								
 									<ul class="section-tab-nav tab-nav">
 										<li class="active"><a class="tab1" data-toggle="tab" href="#tab1" >Smartphones</a></li>
-										<li><a  class="tab1" data-toggle="tab" href="#tab1" >Laptop</a></li>
-										<li><a  class="tab1" data-toggle="tab" href="#tab1" >Tablet</a></li>
-										<li><a  class="tab1" data-toggle="tab" href="#tab1" >Accessory</a></li>
-										<li><a  class="tab1" data-toggle="tab" href="#tab1" >Smart watch</a></li>
+
 									</ul>
 								
 							</div>
@@ -118,13 +115,310 @@ include "header.php";
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<!-- <button href="addcart.php?id=<?php echo $value['id'];?>" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button> -->
+												<button href="addcart.php?id=<?php echo $value['id'];?>" class="add-to-cart-btn">
+												<i class="fa fa-shopping-cart"></i> 
+												<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
+												
+											</button>
 											</div>
 										</div>
 										<!-- /product -->
 										<?php } ?>
 									</div>
-									<div id="slick-nav-1" class="products-slick-nav"></div>
+									
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">New Products Laptop</h3>
+							<div class="section-nav">
+								
+									<ul class="section-tab-nav tab-nav">
+										<li class="active"><a class="tab1" data-toggle="tab" href="#tab1" >Laptop</a></li>
+									</ul>
+								
+							</div>
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab1" class="tab-pane active">
+									<div class="products-slick" data-nav="#slick-nav-1">
+										<?php 
+
+										//var_dump($tab1);
+										$getNewProductType = $product->getNewProductType(1);
+										foreach($getNewProductType as $value){ ?>
+										<!-- product -->
+										<div class="product">
+											<div class="product-img">
+												<img src="./img/<?php echo $value['image'] ?>" alt="">
+												
+											</div>
+											<div class="product-body">
+												<p class="product-category">Category</p>
+												<h3 class="product-name"><a href="product.php?id=<?php echo $value['id']; ?>"><?php echo $value['name'] ?></a></h3>
+												<h4 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h4>
+												<div class="product-rating">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+												<div class="product-btns">
+													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+												</div>
+											</div>
+											<div class="add-to-cart">
+												<button href="addcart.php?id=<?php echo $value['id'];?>" class="add-to-cart-btn">
+												<i class="fa fa-shopping-cart"></i> 
+												<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
+												
+											</button>
+											</div>
+										</div>
+										<!-- /product -->
+										<?php } ?>
+									</div>
+									
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">New Products Tablet</h3>
+							<div class="section-nav">
+								
+									<ul class="section-tab-nav tab-nav">
+										<li class="active"><a class="tab1" data-toggle="tab" href="#tab1" >Tablet</a></li>
+
+									</ul>
+								
+							</div>
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab1" class="tab-pane active">
+									<div class="products-slick" data-nav="#slick-nav-1">
+										<?php 
+
+										//var_dump($tab1);
+										$getNewProductType = $product->getNewProductType(3);
+										foreach($getNewProductType as $value){ ?>
+										<!-- product -->
+										<div class="product">
+											<div class="product-img">
+												<img src="./img/<?php echo $value['image'] ?>" alt="">
+												
+											</div>
+											<div class="product-body">
+												<p class="product-category">Category</p>
+												<h3 class="product-name"><a href="product.php?id=<?php echo $value['id']; ?>"><?php echo $value['name'] ?></a></h3>
+												<h4 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h4>
+												<div class="product-rating">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+												<div class="product-btns">
+													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+												</div>
+											</div>
+											<div class="add-to-cart">
+												<button href="addcart.php?id=<?php echo $value['id'];?>" class="add-to-cart-btn">
+												<i class="fa fa-shopping-cart"></i> 
+												<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
+												
+											</button>
+											</div>
+										</div>
+										<!-- /product -->
+										<?php } ?>
+									</div>
+									
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">New Products Accessory</h3>
+							<div class="section-nav">
+								
+									<ul class="section-tab-nav tab-nav">
+										<li class="active"><a class="tab1" data-toggle="tab" href="#tab1" >Accessory</a></li>
+									</ul>
+								
+							</div>
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab1" class="tab-pane active">
+									<div class="products-slick" data-nav="#slick-nav-1">
+										<?php 
+
+										//var_dump($tab1);
+										$getNewProductType = $product->getNewProductType(4);
+										foreach($getNewProductType as $value){ ?>
+										<!-- product -->
+										<div class="product">
+											<div class="product-img">
+												<img src="./img/<?php echo $value['image'] ?>" alt="">
+												
+											</div>
+											<div class="product-body">
+												<p class="product-category">Category</p>
+												<h3 class="product-name"><a href="product.php?id=<?php echo $value['id']; ?>"><?php echo $value['name'] ?></a></h3>
+												<h4 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h4>
+												<div class="product-rating">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+												<div class="product-btns">
+													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+												</div>
+											</div>
+											<div class="add-to-cart">
+												<button href="addcart.php?id=<?php echo $value['id'];?>" class="add-to-cart-btn">
+												<i class="fa fa-shopping-cart"></i> 
+												<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
+												
+											</button>
+											</div>
+										</div>
+										<!-- /product -->
+										<?php } ?>
+									</div>
+									
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">New Products Smart watch</h3>
+							<div class="section-nav">
+								
+									<ul class="section-tab-nav tab-nav">
+										<li class="active"><a class="tab1" data-toggle="tab" href="#tab1" >Smart watch</a></li>
+									</ul>
+								
+							</div>
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab1" class="tab-pane active">
+									<div class="products-slick" data-nav="#slick-nav-1">
+										<?php 
+
+										//var_dump($tab1);
+										$getNewProductType = $product->getNewProductType(5);
+										foreach($getNewProductType as $value){ ?>
+										<!-- product -->
+										<div class="product">
+											<div class="product-img">
+												<img src="./img/<?php echo $value['image'] ?>" alt="">
+												
+											</div>
+											<div class="product-body">
+												<p class="product-category">Category</p>
+												<h3 class="product-name"><a href="product.php?id=<?php echo $value['id']; ?>"><?php echo $value['name'] ?></a></h3>
+												<h4 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h4>
+												<div class="product-rating">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+												<div class="product-btns">
+													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+												</div>
+											</div>
+											<div class="add-to-cart">
+												<button href="addcart.php?id=<?php echo $value['id'];?>" class="add-to-cart-btn">
+												<i class="fa fa-shopping-cart"></i> 
+												<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
+												
+											</button>
+											</div>
+										</div>
+										<!-- /product -->
+										<?php } ?>
+									</div>
+									
 								</div>
 								<!-- /tab -->
 							</div>
@@ -194,15 +488,10 @@ include "header.php";
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
-							<h3 class="title">Top Highlights</h3>
+							<h3 class="title">Top Highlights Smartphones</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
 									<li class="active"><a data-toggle="tab" href="#tab2">Smartphones</a></li>
-									
-									<li><a data-toggle="tab" href="#tab2">Laptop</a></li>
-									<li><a data-toggle="tab" href="#tab2">Tablet</a></li>
-									<li><a data-toggle="tab" href="#tab2">Accessory</a></li>
-									<li><a data-toggle="tab" href="#tab2">Smart watch</a></li>
 								</ul>
 							</div>
 						</div>
@@ -244,13 +533,15 @@ include "header.php";
 													</div>
 												</div>
 												<div class="add-to-cart">
-													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> 
+													<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
+												</button>
 												</div>
 											</div>
 											<!-- /product -->
 											<?php } ?>
 									</div>
-									<div id="slick-nav-2" class="products-slick-nav"></div>
+									
 								</div>
 								<!-- /tab -->
 							</div>
@@ -259,6 +550,278 @@ include "header.php";
 					<!-- /Products tab & slick -->
 				</div>
 				<!-- /row -->
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">Top Highlights Laptop</h3>
+							<div class="section-nav">
+								<ul class="section-tab-nav tab-nav">
+									<li class="active"><a data-toggle="tab" href="#tab2">Laptop</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab2" class="tab-pane fade in active">
+									<div class="products-slick" data-nav="#slick-nav-2">
+										<!-- product -->
+										<?php
+										$getTopProductType = $product->getTopProductType(2);
+										foreach($getTopProductType as $value){ ?>
+											<!-- product -->
+											<div class="product">
+												<div class="product-img">
+													<img src="./img/<?php echo $value['image'] ?>" alt="">
+													
+												</div>
+												<div class="product-body">
+													<p class="product-category">Category</p>
+													<h3 class="product-name"><a href="product.php?id=<?php echo $value['id']; ?>"><?php echo $value['name'] ?></a></h3>
+													<h4 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h4>
+													<div class="product-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+													</div>
+													<div class="product-btns">
+														<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+														<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+														<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+													</div>
+												</div>
+												<div class="add-to-cart">
+													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> 
+													<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
+												</button>
+												</div>
+											</div>
+											<!-- /product -->
+											<?php } ?>
+									</div>
+									
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- /Products tab & slick -->
+				</div>
+				<!-- /row -->
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">Top Highlights Tablet</h3>
+							<div class="section-nav">
+								<ul class="section-tab-nav tab-nav">
+									<li class="active"><a data-toggle="tab" href="#tab2">Tablet</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab2" class="tab-pane fade in active">
+									<div class="products-slick" data-nav="#slick-nav-2">
+										<!-- product -->
+										<?php
+										$getTopProductType = $product->getTopProductType(3);
+										foreach($getTopProductType as $value){ ?>
+											<!-- product -->
+											<div class="product">
+												<div class="product-img">
+													<img src="./img/<?php echo $value['image'] ?>" alt="">
+													
+												</div>
+												<div class="product-body">
+													<p class="product-category">Category</p>
+													<h3 class="product-name"><a href="product.php?id=<?php echo $value['id']; ?>"><?php echo $value['name'] ?></a></h3>
+													<h4 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h4>
+													<div class="product-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+													</div>
+													<div class="product-btns">
+														<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+														<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+														<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+													</div>
+												</div>
+												<div class="add-to-cart">
+													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> 
+													<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
+												</button>
+												</div>
+											</div>
+											<!-- /product -->
+											<?php } ?>
+									</div>
+									
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- /Products tab & slick -->
+				</div>
+				<!-- /row -->
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">Top Highlights Accessory</h3>
+							<div class="section-nav">
+								<ul class="section-tab-nav tab-nav">
+									<li class="active"><a data-toggle="tab" href="#tab2">Accessory</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab2" class="tab-pane fade in active">
+									<div class="products-slick" data-nav="#slick-nav-2">
+										<!-- product -->
+										<?php
+										$getTopProductType = $product->getTopProductType(4);
+										foreach($getTopProductType as $value){ ?>
+											<!-- product -->
+											<div class="product">
+												<div class="product-img">
+													<img src="./img/<?php echo $value['image'] ?>" alt="">
+													
+												</div>
+												<div class="product-body">
+													<p class="product-category">Category</p>
+													<h3 class="product-name"><a href="product.php?id=<?php echo $value['id']; ?>"><?php echo $value['name'] ?></a></h3>
+													<h4 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h4>
+													<div class="product-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+													</div>
+													<div class="product-btns">
+														<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+														<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+														<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+													</div>
+												</div>
+												<div class="add-to-cart">
+													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> 
+													<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
+												</button>
+												</div>
+											</div>
+											<!-- /product -->
+											<?php } ?>
+									</div>
+									
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- /Products tab & slick -->
+				</div>
+				<!-- /row -->
+								<!-- row -->
+								<div class="row">
+
+<!-- section title -->
+<div class="col-md-12">
+	<div class="section-title">
+		<h3 class="title">Top Highlights SWART WATCH</h3>
+		<div class="section-nav">
+			<ul class="section-tab-nav tab-nav">
+				<li class="active"><a data-toggle="tab" href="#tab2">Accessory</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- /section title -->
+
+<!-- Products tab & slick -->
+<div class="col-md-12">
+	<div class="row">
+		<div class="products-tabs">
+			<!-- tab -->
+			<div id="tab2" class="tab-pane fade in active">
+				<div class="products-slick" data-nav="#slick-nav-2">
+					<!-- product -->
+					<?php
+					$getTopProductType = $product->getTopProductType(5);
+					foreach($getTopProductType as $value){ ?>
+						<!-- product -->
+						<div class="product">
+							<div class="product-img">
+								<img src="./img/<?php echo $value['image'] ?>" alt="">
+								
+							</div>
+							<div class="product-body">
+								<p class="product-category">Category</p>
+								<h3 class="product-name"><a href="product.php?id=<?php echo $value['id']; ?>"><?php echo $value['name'] ?></a></h3>
+								<h4 class="product-price"><?php echo number_format($value['price']) ?> VNĐ</h4>
+								<div class="product-rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<div class="product-btns">
+									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+									<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+								</div>
+							</div>
+							<div class="add-to-cart">
+								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> 
+								<a href="addcart.php?id=<?php echo $value['id'] ?>">add to cart</a>
+							</button>
+							</div>
+						</div>
+						<!-- /product -->
+						<?php } ?>
+				</div>
+				
+			</div>
+			<!-- /tab -->
+		</div>
+	</div>
+</div>
+<!-- /Products tab & slick -->
+</div>
+<!-- /row -->
 			</div>
 			<!-- /container -->
 		</div>
