@@ -20,7 +20,7 @@
 
   <!-- Main content -->
   <section class="content">
-    <form action="addtype.php" method="post" enctype="multipart/form-data">
+    <form action="edittype.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-12">
           <div class="card card-primary">
@@ -34,6 +34,10 @@
             ?>
                 <div class="card-body">
                   <div class="form-group">
+                  <div class="form-group">
+                  <label for="inputClientCompany">Id</label>
+                  <input type="text" id="inputClientCompany" class="form-control"  name='type_id' value = "<?php echo $value1['type_id']?>" active>
+                </div>
                     <label for="inputClientCompany">Type_name</label>
                     <input type="text" id="inputClientCompany" class="form-control" name='type_name' value="<?php echo $value1['type_name'] ?>">
                   </div>

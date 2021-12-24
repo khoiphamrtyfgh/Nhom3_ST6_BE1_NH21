@@ -60,12 +60,44 @@ class Product extends Db{
         $sql->bind_param("i",$id);
         return $sql->execute();
     }
+    public function upProduct($id ,$name , $manu_id , $type_id, $price ,$image, $description ,$feature ,$time){
+        $sql = self::$connection->prepare("UPDATE `products` SET `name`= ? ,`manu_id`= ?,
+        `type_id`= ?,`price`= ?,`image`= ?,`description`= ?,
+        `feature`= ?,`created_at`= ? WHERE id = ?");     
+        $sql->bind_param("siiissisi",$name , $manu_id , $type_id, $price ,$image, $description ,$feature ,$time,$id);
+        return $sql->execute();
+    }
     public function getAllProductsId($id){
         $sql = self::$connection->prepare("SELECT * 
         FROM `products`,`manufactures`,`protypes`
         WHERE `products`.`manu_id` = `manufactures`.`manu_id`
         AND `products`.`type_id` = `protypes`.`type_id`
         AND `products`.`id` = ?");
+        $sql->bind_param("i",$id);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array   
+    }
+   
+    public function checkManu($id){
+        $sql = self::$connection->prepare(" SELECT * FROM `products` WHERE `manu_id` = ?");
+        $sql->bind_param("i",$id);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array   
+    }
+    public function checkType($id){
+        $sql = self::$connection->prepare(" SELECT * FROM `products` WHERE `type_id` = ?");
+        $sql->bind_param("i",$id);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array   
+    }
+    public function checkProduct($id){
+        $sql = self::$connection->prepare(" SELECT * FROM `products` WHERE `id` = ?");
         $sql->bind_param("i",$id);
         $sql->execute();
         $items = array();

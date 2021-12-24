@@ -2,8 +2,8 @@
 	include "header.php";
 	//var_dump($_SESSION['id_user']);
 	$id_user;
-	if(isset($_SESSION['id_user'])){
-		$id_user = $_SESSION['id_user'];
+	if(isset($_SESSION['user_id'])){
+		$id_user = $_SESSION['user_id'];
 	}else{
 		echo '<script language="javascript">alert("Chưa Đăng Nhập!"); window.location="index.php";</script>';
 	}
@@ -12,7 +12,6 @@
 <h1> Your Cart</h1>
 <table border="1">
     <tr>
-<<<<<<< HEAD
         <td><center>ID</center></td>
         <td><center>Name</center></td>
 		<td><center>Img</center></td>
@@ -67,27 +66,7 @@
 <center><h1>Tổng Tiền</h1></center>
 <center><h1><?php echo number_format($tongtien) ?> VNĐ</h1></center>
 <center><h3><a href="bill.php">In hóa đơn</a></h3></center>
-=======
-        <th colspan="3">Cart Information</th>
-    </tr>
-    <tr>
-        <td>Trần Anh Đức</td>
-        <td>03/08/1993</td>
-        <td>Nam</td>
-    </tr>
-    <tr>
-        <td>Kiều Thị Thu Hằng</td>
-        <td>04/09/1991</td>
-        <td>Nữ</td>
-    </tr>
-    <tr>
-        <td>Vương Thị Lê Na</td>
-        <td>06/10/1991</td>
-        <td>Nữ</td>
-    </tr>
-</table>
-</center>
->>>>>>> 525915700086753e1c1a5e6e9916e77c9c4a3363
+
 <?php
 
 include "footer.html";

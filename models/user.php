@@ -8,19 +8,14 @@ class User extends Db{
         return $items; //return an array   
     }
     public function checkLogin($username,$password){
+        $password = md5($password);
         $sql = self::$connection->prepare("SELECT * FROM users
         WHERE `username`=? AND `password`=?");
-        $password = md5($password);
+        
         $sql->bind_param("ss",$username,$password);
         $sql->execute();
         $items=array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
-        // if($items==1){
-        //     return true;
-        // }
-        // else{
-        //     return false;
-        // }
         return $items; 
     }
     public function addUser($username, $password,$fullname,$address,$email,$phone)

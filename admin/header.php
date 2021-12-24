@@ -4,13 +4,19 @@ require "models/db.php";
 require "models/product.php";
 require "models/manufacture.php";
 require "models/protype.php";
+require "models/cart.php";
+require "models/user.php";
 $product = new Product;
 $manufacture = new Manufacture;
 $protype = new Protype;
-
+$cart = new Cart;
+$user = new User;
 $getAllProducts = $product->getAllProducts();
 $getAllManufacture = $manufacture->getAllManufacture();
 $getAllProtype = $protype->getAllProtype();
+$getAllCart = $cart->getAllCart();
+$getAllUser = $user->getAllUser();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -231,12 +237,20 @@ $getAllProtype = $protype->getAllProtype();
             $page = 3;
           }else if(strpos($url,"/protype.php") != null ){
             $page = 4;
-          }else if(strpos($url,"/addproduct.php") != null ){
+          }else if(strpos($url,"/users.php") != null ){
             $page = 5;
-          }else if(strpos($url,"/addmanufacture.php") != null ){
+          }else if(strpos($url,"/carts.php") != null ){
             $page = 6;
-          }else if(strpos($url,"/addprotype.php") != null ){
+          }else if(strpos($url,"/addproduct.php") != null ){
             $page = 7;
+          }else if(strpos($url,"/addmanufacture.php") != null ){
+            $page = 8;
+          }else if(strpos($url,"/addprotype.php") != null ){
+            $page = 9;
+          }else if(strpos($url,"/adduser.php") != null ){
+            $page = 10;
+          }else  if(strpos($url,"/addcart.php") != null ){
+            $page = 11;
           }else $page = 1;
           
           $tamPage = 1;
@@ -311,6 +325,40 @@ $getAllProtype = $protype->getAllProtype();
           </li>
           <li class="nav-item">
           <?php
+            //<a href="protype.php" class="nav-link">
+            if($page == $tamPage){
+              echo '<a class="nav-link active">';
+              $tamPage = $tamPage + 1;
+            }else{
+              echo '<a href="users.php" class="nav-link">';
+              $tamPage = $tamPage + 1;
+            }
+            ?>
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Users
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+          <?php
+            //<a href="protype.php" class="nav-link">
+            if($page == $tamPage){
+              echo '<a class="nav-link active">';
+              $tamPage = $tamPage + 1;
+            }else{
+              echo '<a href="carts.php" class="nav-link">';
+              $tamPage = $tamPage + 1;
+            }
+            ?>
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Carts
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+          <?php
             //<a href="addproduct.php" class="nav-link">
             if($page == $tamPage){
               echo '<a class="nav-link active">';
@@ -343,6 +391,7 @@ $getAllProtype = $protype->getAllProtype();
               </p>
             </a>
           </li>
+          
           <li class="nav-item">
           <?php
             //<a href="addprotype.php" class="nav-link">
@@ -360,7 +409,40 @@ $getAllProtype = $protype->getAllProtype();
               </p>
             </a>
           </li>
-          
+          <li class="nav-item">
+          <?php
+            //<a href="addprotype.php" class="nav-link">
+            if($page == $tamPage){
+              echo '<a class="nav-link active">';
+              $tamPage = $tamPage + 1;
+            }else{
+              echo '<a href="adduser.php" class="nav-link">';
+              $tamPage = $tamPage + 1;
+            }
+            ?>
+            <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                User Add
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+          <?php
+            //<a href="addprotype.php" class="nav-link">
+            if($page == $tamPage){
+              echo '<a class="nav-link active">';
+              $tamPage = $tamPage + 1;
+            }else{
+              echo '<a href="addcart.php" class="nav-link">';
+              $tamPage = $tamPage + 1;
+            }
+            ?>
+            <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                Carts Add
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

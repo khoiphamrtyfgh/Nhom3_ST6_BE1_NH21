@@ -20,7 +20,7 @@
 
     <!-- Main content -->
     <section class="content">
-    <form action="addduct.php" method="post" enctype="multipart/form-data">
+    <form action="editduct.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-12">
           <div class="card card-primary">
@@ -33,9 +33,9 @@
                 foreach($getAllProductsId as $value1):
             ?>
             <div class="card-body">
-            <div class="form-group">
+              <div class="form-group">
                 <label for="inputClientCompany">Id</label>
-                <input type="text" id="inputClientCompany" class="form-control" name='id' value = "<?php echo $value1['id']?>" active>
+                <input type="text" id="inputClientCompany" class="form-control"  name='id' value = "<?php echo $value1['id']?>" active>
               </div>
               <div class="form-group">
                 <label for="inputClientCompany">Name</label>
@@ -44,7 +44,6 @@
               <div class="form-group">
                 <label for="inputStatus">Manu name</label>
                 <select id="inputStatus" class="form-control custom-select" name='manu_id'>
-                  
                   <?php
                     foreach($getAllManufacture as $value2):
                         if($value1['manu_id'] == $value2['manu_id']){
@@ -59,7 +58,7 @@
                   
                   <?php
                     foreach($getAllProtype as $value2):
-                        if($value1['manu_id'] == $value2['manu_id']){
+                        if($value1['type_id'] == $value2['type_id']){
                             echo "<option value=". $value2['type_id'] ."  selected disabled >". $value2['type_name'] ."</option>";
                         }else echo "<option value=". $value2['type_id'] .">". $value2['type_name'] ."</option>";
                     endforeach; 

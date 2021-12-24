@@ -34,6 +34,10 @@
             ?>
                 <div class="card-body">
                   <div class="form-group">
+                  <label for="inputClientCompany">Id</label>
+                  <input type="text" id="inputClientCompany" class="form-control"  name='manu_id' value = "<?php echo $value1['manu_id']?>" active>
+                </div>
+                  <div class="form-group">
                     <label for="inputClientCompany">Manu_name</label>
                     <input type="text" id="inputClientCompany" class="form-control" name='manu_name' value="<?php echo $value1['manu_name'] ?>">
                   </div>
