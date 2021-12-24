@@ -1,7 +1,7 @@
 <?php
 	include "header.php";
 
-	$id_user = $_SESSION['id_user'];
+	$id_user = $_SESSION['user_id'];
 ?>
 <center>
 <h1> Your Bill</h1>

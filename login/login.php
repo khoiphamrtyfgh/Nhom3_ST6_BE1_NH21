@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 require "../config.php";
 require "../models/db.php";
 require "../models/user.php";
@@ -14,12 +12,9 @@ if (isset($_POST['submit'])) {
         foreach($acc as $value){
             if ($value['role_id'] == 0){
                 $_SESSION['user_id'] = $value['user_id'];
-
-
                 echo '<script language="javascript">alert("Đăng Nhập admin Thành Công!"); window.location="../admin";</script>'; 
             } else {
                 $_SESSION['user_id'] = $value['user_id'];
-                var_dump($_SESSION['user_id']);
                 echo '<script language="javascript">alert("Đăng Nhập Thành Công!"); window.location="../index.php";</script>';
             }
         }

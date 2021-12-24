@@ -14,12 +14,12 @@ $getAllProducts = $product->getAllProducts();
 $getAllProtype = $protype->getAllProtype();
 
 
-$carts = $product->getAllProductByCart($_SESSION['id_user']);
+$carts = $product->getAllProductByCart($_SESSION['user_id']);
 if(isset($_GET['id'])){
 	foreach($carts as $value){
 		if($value['id_product'] == $_GET['id']){
 			$tam1 = $value['pty'] + 1;
-			$cart->updateCart($_SESSION['id_user'], $value['id_product'], $tam1);
+			$cart->updateCart($_SESSION['user_id'], $value['id_product'], $tam1);
 			break;
 		}
 	}
